@@ -19,18 +19,18 @@ contract HumaniqICO is SafeMath {
     // Address where all tokens created during ICO stage initially allocated
     address public allocationAddress = 0x1111111111111111111111111111111111111111;
 
-    // Start date of the ICO
-    uint public startDate = 1491433200;  // 2017-04-05 23:00:00 UTC
+    // Start date of the ICO, as variable
+    uint public startDate = 1503923680;  // 2017-08-28 12:34:00 UTC
 
-    // End date of the ICO
-    uint public endDate = 1493247600;  // 2017-04-26 23:00:00 UTC
+    // End date of the ICO, as variable 
+    uint public endDate = 1505952000;  // 2017-09-22 00:00:00 UTC
 
     // Token price without discount during the ICO stage
-    uint public baseTokenPrice = 10000000; // 0.001 ETH, considering 8 decimal places
+    uint public baseTokenPrice = 1000000; // 0.0001 ETH, considering 8 decimal places
 
     // Number of tokens distributed to investors
     uint public tokensDistributed = 0;
-
+    
     /*
      *  Modifiers
      */
@@ -75,7 +75,7 @@ contract HumaniqICO is SafeMath {
         }
 
         uint icoDuration = timestamp - startDate;
-        if (icoDuration >= 16 days) {
+        if (icoDuration >= 12 days) {
             return 1000;  // 0%
         } else if (icoDuration >= 9 days) {
             return 1125;  // 12.5%
